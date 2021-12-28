@@ -134,6 +134,9 @@ function initialize_database() {
       tx.executeSql(query, ["Category 01", "iPhone 13"],fetch_transaction_success("Category 01"), transaction_error);
       tx.executeSql(query, ["Category 02", "iPhone 13 Pro"],fetch_transaction_success("Category 02"), transaction_error);
   
+      var query = "INSERT INTO account (username, password, status) VALUES (?, ?, ?)";
+      tx.executeSql( query, ["example2@abc.com", "123456",1 ], fetch_transaction_success("example@abc.com"), transaction_error);
+        
       var query = "INSERT INTO product (name, description, price, category_id, image) VALUES (?, ?, ?, ?, ?)";
       tx.executeSql(query, ["iPhone 13 Mini Pink", "Pink", "18000000", "1", "img/minipink.png"],fetch_transaction_success("Category 01"), transaction_error);
       tx.executeSql(query, ["iPhone 13 Mini Blue", "Blue", "18000000", "1", "img/miniblue.png"],fetch_transaction_success("Category 01"), transaction_error);
@@ -153,8 +156,5 @@ function initialize_database() {
       tx.executeSql(query, ["iPhone 13 Pro Max Silver", "Silver", "32000000", "2", "img/promaxsilver.png"],fetch_transaction_success("Category 02"), transaction_error);
       tx.executeSql(query, ["iPhone 13 Pro Max Gold", "Gold", "32000000", "2", "img/promaxgold.png"],fetch_transaction_success("Category 02"), transaction_error);
       tx.executeSql(query, ["iPhone 13 Pro Max Graphite", "Graphite", "32000000", "2", "img/promaxblack.png"],fetch_transaction_success("Category 02"), transaction_error);
-
-      var query = "INSERT INTO account (username, password, status) VALUES (?, ?, ?)";
-      tx.executeSql( query, ["example2@abc.com", "123456",1 ], fetch_transaction_success("example@abc.com"), transaction_error);
   });
   }
