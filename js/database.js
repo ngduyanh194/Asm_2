@@ -135,7 +135,6 @@ function initialize_database() {
       tx.executeSql(query, ["Category 02", "iPhone 13 Pro"],fetch_transaction_success("Category 02"), transaction_error);
   
       var query = "INSERT INTO product (name, description, price, category_id, image) VALUES (?, ?, ?, ?, ?)";
-  
       tx.executeSql(query, ["iPhone 13 Mini Pink", "Pink", "18000000", "1", "img/minipink.png"],fetch_transaction_success("Category 01"), transaction_error);
       tx.executeSql(query, ["iPhone 13 Mini Blue", "Blue", "18000000", "1", "img/miniblue.png"],fetch_transaction_success("Category 01"), transaction_error);
       tx.executeSql(query, ["iPhone 13 Mini Midnight", "Midnight", "18000000", "1", "img/miniblack.png"],fetch_transaction_success("Category 01"), transaction_error);
